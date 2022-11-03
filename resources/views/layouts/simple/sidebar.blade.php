@@ -38,8 +38,8 @@
 		                    <li><a href="{{route('employers.list')}}" class=" {{ in_array(request()->route()->getName(),['employers.list','employers.create','employers.edit']) ? 'active' : '' }} " data-bs-original-title="" title="">@lang('lang.Employers')</a></li>
 		                </ul>
 					</li>
-                    <li class="sidebar-list">
-						<a class="sidebar-link sidebar-title {{ in_array(request()->route()->getName(),['owners.list','owners.create','owners.edit','employers.list','employers.create','employers.edit']) ? 'active' : '' }}" href="#" data-bs-original-title="" title="">
+                    {{--<li class="sidebar-list">
+						<a class="sidebar-link sidebar-title {{ in_array(request()->route()->getName(),['products.list','products.create','products.edit']) ? 'active' : '' }}" href="#" data-bs-original-title="" title="">
 							<i data-feather="users"> </i><span>{{ trans('lang.Products\Services & POS') }}</span>
 							<div class="according-menu"><i class="fa fa-angle-right"></i></div>
 						</a>
@@ -47,18 +47,7 @@
 		                    <li><a href="" class="{{ in_array(request()->route()->getName(),[]) ? 'active' : '' }} " data-bs-original-title="" title="">@lang('lang.Menus POS')</a></li>
 		                    <li><a href="" class=" {{ in_array(request()->route()->getName(),[]) ? 'active' : '' }} " data-bs-original-title="" title="">@lang('lang.Products & Prestations')</a></li>
 		                </ul>
-					</li>
-                    <li class="sidebar-list">
-						<a class="sidebar-link sidebar-title {{ in_array(request()->route()->getName(),['owners.list','owners.create','owners.edit','employers.list','employers.create','employers.edit']) ? 'active' : '' }}" href="#" data-bs-original-title="" title="">
-							<i data-feather="users"> </i><span>{{ trans('lang.Products\Services & POS') }}</span>
-							<div class="according-menu"><i class="fa fa-angle-right"></i></div>
-						</a>
-						<ul class="sidebar-submenu" style="display: none;">
-		                    <li><a href="" class="{{ in_array(request()->route()->getName(),[]) ? 'active' : '' }} " data-bs-original-title="" title="">@lang('lang.Menus POS')</a></li>
-		                    <li><a href="" class=" {{ in_array(request()->route()->getName(),[]) ? 'active' : '' }} " data-bs-original-title="" title="">@lang('lang.Products & Prestations')</a></li>
-		                </ul>
-					</li>
-
+					</li>--}}
 				</ul>
 			</div>
 			<div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>

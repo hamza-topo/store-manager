@@ -10,9 +10,57 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Session;
 
 
-
+//Language Change
+Route::get('lang/{locale}', function ($locale) {
+    if (!in_array($locale, ['en', 'de', 'es', 'fr', 'pt', 'cn', 'ae'])) {
+        abort(400);
+    }
+    Session()->put('locale', $locale);
+    Session::get('locale');
+    return redirect()->back();
+})->name('lang');
 // Route::domain('{account}.example.com')->group(function () {
-
+    Route::middleware('admin')->group(function(){
+        Route::prefix('activities')->group(function(){
+            Route::get('/create', [ActivityController::class, 'create'])->name('activities.create');
+            Route::get('{activityId}/edit/', [ActivityController::class, 'edit'])->name('activities.edit');
+            Route::get('list', [ActivityController::class, 'index'])->name('activities.list');
+        });
+        Route::prefix('campaigns')->group(function () {
+            Route::view('/', 'campaigns.list')->name('campaigns.list');
+            Route::view('/create', 'campaigns.create')->name('campaigns.create');
+        });
+        Route::prefix('stores')->group(function () {
+            Route::get('/create', [StoreController::class, 'create'])->name('stores.create');
+            Route::get('{storeId}/edit/', [StoreController::class, 'edit'])->name('stores.edit');
+            Route::get('list', [StoreController::class, 'index'])->name('stores.list');
+        });
+        
+        Route::prefix('owners')->group(function () {
+            Route::get('/create', [OwnerController::class, 'create'])->name('owners.create');
+            Route::get('{ownerId}/edit/', [OwnerController::class, 'edit'])->name('owners.edit');
+            Route::get('list', [OwnerController::class, 'index'])->name('owners.list');
+            Route::get('detail/{id}', [OwnerController::class, 'show'])->name('owners.show');
+        });
+        
+        Route::prefix('employers')->group(function () {
+            Route::get('/list', [EmployerController::class, 'index'])->name('employers.list');
+            Route::get('/create', [EmployerController::class, 'create'])->name('employers.create');
+            Route::get('{employerId}/edit/', [EmployerController::class, 'edit'])->name('employers.edit');
+        });
+        
+        Route::prefix('customers')->group(function () {
+            Route::view('/', 'admin.customers.list')->name('customers.list');
+            Route::view('/create', 'customers.create')->name('customers.create');
+            Route::view('{customerId}/edit/', 'customers.edit')->name('customers.edit');
+        });
+        
+        Route::prefix('products')->group(function () {
+            Route::get('/list', [ProductController::class, 'index'])->name('products.list');
+            Route::get('/create', [ProductController::class, 'create'])->name('products.create');
+            Route::get('{employerId}/edit/', [ProductController::class, 'edit'])->name('products.edit');
+        });
+    });
 // });
 
 
@@ -24,57 +72,10 @@ Route::get('/cgu', function () {
     return view('cgu');
 })->name('/');
 
-Route::prefix('activities')->group(function(){
-    Route::get('/create', [ActivityController::class, 'create'])->name('activities.create');
-    Route::get('{activityId}/edit/', [ActivityController::class, 'edit'])->name('activities.edit');
-    Route::get('list', [ActivityController::class, 'index'])->name('activities.list');
-});
-Route::prefix('campaigns')->group(function () {
-    Route::view('/', 'campaigns.list')->name('campaigns.list');
-    Route::view('/create', 'campaigns.create')->name('campaigns.create');
-});
-Route::prefix('stores')->group(function () {
-    Route::get('/create', [StoreController::class, 'create'])->name('stores.create');
-    Route::get('{storeId}/edit/', [StoreController::class, 'edit'])->name('stores.edit');
-    Route::get('list', [StoreController::class, 'index'])->name('stores.list');
-});
-
-Route::prefix('owners')->group(function () {
-    Route::get('/create', [OwnerController::class, 'create'])->name('owners.create');
-    Route::get('{ownerId}/edit/', [OwnerController::class, 'edit'])->name('owners.edit');
-    Route::get('list', [OwnerController::class, 'index'])->name('owners.list');
-});
-
-Route::prefix('employers')->group(function () {
-    Route::get('/list', [EmployerController::class, 'index'])->name('employers.list');
-    Route::get('/create', [EmployerController::class, 'create'])->name('employers.create');
-    Route::get('{employerId}/edit/', [EmployerController::class, 'edit'])->name('employers.edit');
-});
-
-Route::prefix('customers')->group(function () {
-    Route::view('/', 'admin.customers.list')->name('customers.list');
-    Route::view('/create', 'customers.create')->name('customers.create');
-    Route::view('{customerId}/edit/', 'customers.edit')->name('customers.edit');
-});
-
-Route::prefix('products')->group(function () {
-    Route::get('/list', [ProductController::class, 'index'])->name('products.list');
-    Route::get('/create', [ProductController::class, 'create'])->name('products.create');
-    Route::get('{employerId}/edit/', [ProductController::class, 'edit'])->name('products.edit');
-});
 
 
 
 
-//Language Change
-Route::get('lang/{locale}', function ($locale) {
-    if (!in_array($locale, ['en', 'de', 'es', 'fr', 'pt', 'cn', 'ae'])) {
-        abort(400);
-    }
-    Session()->put('locale', $locale);
-    Session::get('locale');
-    return redirect()->back();
-})->name('lang');
 
 Route::prefix('dashboard')->group(function () {
     Route::view('index', 'dashboard.index')->name('index');

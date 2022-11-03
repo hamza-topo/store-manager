@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Store;
 
 use App\Facades\StoreFacade;
 use App\Facades\UserFacade;
+use App\Facades\ActivityFacade;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -14,6 +15,7 @@ class StoreForm extends Component
     use LivewireAlert;
 
     public array $store = [];
+    public $owners;
     public $activities;
     public $logo;
 
@@ -22,9 +24,8 @@ class StoreForm extends Component
         if (!empty($storeId)){
             $this->store = StoreFacade::findById($storeId)->toArray();
         }
-        //TODO: get this entities
-        // $this->owners = UserFacade::getOwners();
-        // $this->activities = ActivityFacade::getAll();
+         $this->owners = UserFacade::getOwners();
+         $this->activities = ActivityFacade::getAll();
     }
 
 

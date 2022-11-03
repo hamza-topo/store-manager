@@ -20,8 +20,9 @@
                         <td>{{$owner->email}}</td>
                         <td>{{$owner->isActive}}</td>
                         <td>
-                            <button class="btn btn-danger btn-sm" type="button" wire:click='delete({{$owner->id}})'>@lang('lang.Delete')</button>
-                            <a class="btn btn-info btn-sm" type="button" href="{{route('owners.edit',$owner->id)}}">@lang('lang.Edit')</a>
+                            <button class="btn btn-danger btn-sm" type="button" wire:click='delete({{$owner->id}})'><i class="fa fa-trash"></i></button>
+                            <a class="btn btn-info btn-sm" type="button" href="{{route('owners.edit',$owner->id)}}"><i class="fa fa-pencil"></i></a>
+                            <a class="btn btn-primary btn-sm" type="button" href="{{route('owners.show',$owner->id)}}"><i class="fa fa-eye"></i></a>
                         </td>
                     </tr>
                 @endforeach
