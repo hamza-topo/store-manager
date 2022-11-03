@@ -1,1 +1,1 @@
-https://codepen.io/amiryousefi/pen/pqEMgN
+This is an admin panel for managine phisical stores
