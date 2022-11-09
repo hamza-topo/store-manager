@@ -30,7 +30,7 @@
                         <h5 class="card-title">@lang('Customer Account')</h5>
                     </div>
                     <div class="card-body o-hidden">
-                        <livewire:employer.employer-form />
+                        <livewire:customer.customer-form />
                     </div>
                 </div>
             </div>
