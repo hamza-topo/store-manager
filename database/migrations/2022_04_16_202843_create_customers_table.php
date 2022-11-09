@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('lastname');
             $table->string('sexe')->comment='0:H,1:F';
             $table->date('birth');
-            $table->integer('points');
+            $table->integer('points')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

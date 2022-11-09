@@ -11,17 +11,17 @@
                 </select>
             </div>
         </div>
-        @if(!$stores->isEmpty())
+        @if(!$stores->isEmpty() && isset($customer['storeId']) && $customer['storeId'] != -1 )
         <div class="col-md-6">
             <div class="mb-2">
                 <label for="validationDefault01">@lang('lang.Fisrt Name')</label>
-                <input class="form-control" id="validationDefault01" type="text" wire:model="customer.firstName" placeholder="@lang('lang.Name')" required>
+                <input class="form-control" id="validationDefault01" type="text" wire:model="customer.firstname" placeholder="@lang('lang.Name')" required>
             </div>
         </div>
         <div class="col-md-6">
             <div class="mb-2">
                 <label for="validationDefault01">@lang('lang.Last Name')</label>
-                <input class="form-control" id="validationDefault01" type="text" wire:model="customer.lastName" placeholder="@lang('lang.Last Name')">
+                <input class="form-control" id="validationDefault01" type="text" wire:model="customer.lastname" placeholder="@lang('lang.Last Name')">
             </div>
         </div>
         <div class="col-md-6">
@@ -39,7 +39,7 @@
         <div class="col-md-6">
             <div class="mb-2">
                 <label for="validationDefault01">@lang('lang.Birth Day')</label>
-                <input class="form-control" id="validationDefault01" type="email" wire:model="customer.birthday" placeholder="@lang('lang.Phone')" required>
+                <input class="form-control" id="validationDefault01" type="date" wire:model="customer.birth" placeholder="@lang('lang.Phone')" required>
             </div>
         </div>
         <div class="col-md-6">
@@ -47,10 +47,10 @@
                 <label for="validationDefault01">@lang('lang.Gender')</label>
                 <div class="d-block">
                     <label class="me-3" for="edo-ani">
-                        <input class="radio_animated" id="edo-ani" type="radio" name="rdo-ani" wire:model="customer.gender" value="{{App\Enums\Gender::MALE}}" checked=""><span>@lang('lang.Male')</span>
+                        <input class="radio_animated" id="edo-ani" type="radio" name="rdo-ani" wire:model="customer.sexe" value="{{App\Enums\Gender::MALE}}" checked=""><span>@lang('lang.Male')</span>
                     </label>
                     <label for="edo-ani1">
-                        <input class="radio_animated" id="edo-ani1" type="radio" name="rdo-ani" wire:model="customer.gender" value="{{App\Enums\Gender::FEMALE}}"><span>@lang('lang.Female')</span>
+                        <input class="radio_animated" id="edo-ani1" type="radio" name="rdo-ani" wire:model="customer.sexe" value="{{App\Enums\Gender::FEMALE}}"><span>@lang('lang.Female')</span>
                     </label>
                 </div>
             </div>
