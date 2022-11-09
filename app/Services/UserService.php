@@ -55,6 +55,6 @@ class UserService implements Service
     public function clearCache()
     {
         Cache::forget(EnumsUser::LIST_EMPLOYERS);
-        return Cache::forget(EnumsUser::LIST_OWNERS);
+        Cache::forget(EnumsUser::LIST_OWNERS);
     }
 }

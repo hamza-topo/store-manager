@@ -13,13 +13,13 @@
       </div>
     </form>
     <div class="header-logo-wrapper col-auto p-0">
-      <div class="logo-wrapper"><a href="{{route('/')}}"><img class="img-fluid" src="{{asset('assets/images/logo/logo.png')}}" alt=""></a></div>
-      <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i></div>
+      <!-- <div class="logo-wrapper"><a href="{{route('/')}}"><img class="img-fluid" src="{{asset('assets/images/logo/logo.png')}}" alt=""></a></div> -->
+      <!-- <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i></div> -->
     </div>
     <div class="left-header col horizontal-wrapper ps-0">
       <ul class="horizontal-menu">
         <li class="mega-menu outside">
-          <a class="nav-link" href="#!"><i data-feather="layers"></i><span>Bonus Ui</span></a>
+          <!-- <a class="nav-link" href="#!"><i data-feather="layers"></i><span>Bonus Ui</span></a> -->
           <div class="mega-menu-container nav-submenu menu-to-be-close header-mega">
             <div class="container-fluid">
               <div class="row">

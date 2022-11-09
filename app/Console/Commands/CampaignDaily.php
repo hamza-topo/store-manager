@@ -12,7 +12,7 @@ class CampaignDaily extends Command
      *
      * @var string
      */
-    protected $signature = 'campaign:daily';
+    protected $signature = 'run:daily-camp';
 
     /**
      * The console command description.

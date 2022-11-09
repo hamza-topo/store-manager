@@ -5,7 +5,7 @@
                 <tr>
                     <th>@lang('lang.Name')</th>
                     <th>@lang('lang.Description')</th>
-                    <th>@lang('lang.Associated activitys')</th>
+                    <th>@lang('lang.Associated Stores')</th>
                     <th>@lang('lang.Actions')</th>
                 </tr>
             </thead>

@@ -18,7 +18,7 @@ class Birthday extends Command
      *
      * @var string
      */
-    protected $signature = 'campaign:birthday';
+    protected $signature = 'run:birthday-camp';
 
     /**
      * The console command description.

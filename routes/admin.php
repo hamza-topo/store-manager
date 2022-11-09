@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Web\ActivityController;
+use App\Http\Controllers\Web\CustomerController;
 use App\Http\Controllers\Web\EmployerController;
 use App\Http\Controllers\Web\OwnerController;
 use App\Http\Controllers\Web\ProductController;
@@ -20,7 +21,7 @@ Route::get('lang/{locale}', function ($locale) {
     return redirect()->back();
 })->name('lang');
 // Route::domain('{account}.example.com')->group(function () {
-    Route::middleware('admin')->group(function(){
+    // Route::middleware('admin')->group(function(){
         Route::prefix('activities')->group(function(){
             Route::get('/create', [ActivityController::class, 'create'])->name('activities.create');
             Route::get('{activityId}/edit/', [ActivityController::class, 'edit'])->name('activities.edit');
@@ -50,9 +51,9 @@ Route::get('lang/{locale}', function ($locale) {
         });
         
         Route::prefix('customers')->group(function () {
-            Route::view('/', 'admin.customers.list')->name('customers.list');
-            Route::view('/create', 'customers.create')->name('customers.create');
-            Route::view('{customerId}/edit/', 'customers.edit')->name('customers.edit');
+            Route::get('/', [CustomerController::class,'index'])->name('customers.list');
+            Route::get('/create', [CustomerController::class,'create'])->name('customers.create');
+            Route::get('{customerId}/edit/', [CustomerController::class,'edit'])->name('customers.edit');
         });
         
         Route::prefix('products')->group(function () {
@@ -60,7 +61,7 @@ Route::get('lang/{locale}', function ($locale) {
             Route::get('/create', [ProductController::class, 'create'])->name('products.create');
             Route::get('{employerId}/edit/', [ProductController::class, 'edit'])->name('products.edit');
         });
-    });
+    // });
 // });
 
 
