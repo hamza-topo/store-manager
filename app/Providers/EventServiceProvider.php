@@ -2,12 +2,16 @@
 
 namespace App\Providers;
 
+use App\Events\NewCustomerEvent;
+use App\Listeners\CustomerCreatedListener;
 use App\Models\Activity;
 use App\Models\Campaign;
+use App\Models\Customer;
 use App\Models\Store;
 use App\Models\User;
 use App\Observers\ActivityObserver;
 use App\Observers\CampaignObserver;
+use App\Observers\CustomerObserver;
 use App\Observers\StoreObserver;
 use App\Observers\UserObserver;
 use Illuminate\Auth\Events\Registered;
@@ -26,6 +30,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        NewCustomerEvent::class => [
+            CustomerCreatedListener::class,
+        ],
     ];
 
     /**
@@ -39,6 +46,7 @@ class EventServiceProvider extends ServiceProvider
         User::observe(UserObserver::class);
         Campaign::observe(CampaignObserver::class);
         Activity::observe(ActivityObserver::class);
+        Customer::observe(CustomerObserver::class);
     }
 
     /**

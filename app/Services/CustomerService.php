@@ -3,9 +3,12 @@
 namespace App\Services;
 
 use App\Enums\Customer as EnumsCustomer;
+use App\Mail\NewCustomerMail;
 use App\Models\Customer;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class CustomerService implements Service
 {
@@ -40,16 +43,18 @@ class CustomerService implements Service
 
     public function getAll(): Collection
     {
-        return Cache::remember(EnumsCustomer::LIST_CUSTOMERS,EnumsCustomer::CACHE_TIME,function(){
-             return Customer::all();
+        return Cache::remember(EnumsCustomer::LIST_CUSTOMERS, EnumsCustomer::CACHE_TIME, function () {
+            return Customer::all();
         });
     }
-
- 
-
 
     public function clearCache()
     {
         return Cache::forget(EnumsCustomer::LIST_CUSTOMERS);
+    }
+
+    public function sendWelcomeMessgeMail(Customer $customer){
+        Log::info('run the service');
+        Mail::to($customer->email)->send(new NewCustomerMail($customer));
     }
 }

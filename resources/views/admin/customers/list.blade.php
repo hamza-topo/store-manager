@@ -1,5 +1,5 @@
 @extends('layouts.simple.master')
-@section('title', 'Sherin List of Stores')
+@section('title', 'Sherin List of Customers')
 
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/datatables.css')}}">
@@ -8,7 +8,7 @@
 
 
 @section('breadcrumb-title')
-<h3>@lang('lang.Stores')</h3>
+<h3>@lang('lang.Customers')</h3>
 @endsection
 
 @section('breadcrumb-items')
@@ -26,7 +26,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-
+                       <livewire:customer.customer-list />
                     </div>
                 </div>
             </div>
