@@ -125,6 +125,14 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+     /*
+    |--------------------------------------------------------------------------
+    | Whatsapp End point
+    |--------------------------------------------------------------------------
+    |
+    | This enpoints is provided by whatsapp api service!
+    */
+    'whatsapp_api'        => "https://api.whatsapp.com/send?phone=",
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

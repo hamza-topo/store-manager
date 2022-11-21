@@ -60,12 +60,8 @@
         @endif
     </div>
     <div class="mt-3" style="text-align: right;">
-        @if (empty($owner['id']))
+        @if(empty($customer['id']))
         <button class="btn btn-primary " type="button" wire:click='save()'>@lang('lang.Save')</button>
-        @if (!empty($ownerId))
-        <a class="" href='{{ route('stores.create', ['owner' => $ownerId]) }}'>@lang('lang.Continue
-            to Store Config ? ')</a>
-        @endif
         @else
         <button class="btn btn-primary " type="button" wire:click='update()'>@lang('lang.Update')</button>
         @endif

@@ -18,7 +18,7 @@
                          <td>{{$customer->store->name}}</td>
                          <td>{{$customer->firstname}}</td>
                          <td>{{$customer->lastname}}</td>
-                         <td>{{$customer->phone}}</td>
+                         <td> <a href="{{config('app.whatsapp_api')}}{{$customer->phone}}" target="_blank">{{$customer->phone}}</a> </td>
                          <td>{{$customer->email}}</td>
                          <td>{{$customer->points}}</td>
                          <td>
