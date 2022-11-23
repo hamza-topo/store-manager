@@ -15,19 +15,15 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->integer('storeId')->nullable();
-            $table->integer('isAdmin');
-            $table->string('firstName');
-            $table->string('lastName');
-            $table->string('phone');
-            $table->tinyInteger('allowShare')->default(1);
-            $table->tinyInteger('isActive')->default(1);
+            $table->tinyInteger('is_admin')->comment("1:admin,2:owner,3:employer");
+            $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->foreignId('current_team_id')->nullable();
+            $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

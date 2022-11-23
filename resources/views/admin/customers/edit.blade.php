@@ -1,6 +1,6 @@
 @extends('layouts.simple.master')
 @section('title', 'Select2')
-<title>@lang('Edit Owner')</title>
+<title>@lang('Edit Customer')</title>
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/range-slider.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/select2.css')}}">

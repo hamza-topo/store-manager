@@ -33,12 +33,12 @@
                       <h6>Error Page</h6>
                     </div>
                     <ul>
-                      <li><a href="{{route('error-400')}}">Error page 400</a></li>
-                      <li><a href="{{route('error-401')}}">Error page 401</a></li>
-                      <li><a href="{{route('error-403')}}">Error page 403</a></li>
-                      <li><a href="{{route('error-404')}}">Error page 404</a></li>
-                      <li><a href="{{route('error-500')}}">Error page 500</a></li>
-                      <li><a href="{{route('error-503')}}">Error page 503</a></li>
+                      <li><a href="#">Error page 400</a></li>
+                      <li><a href="#">Error page 401</a></li>
+                      <li><a href="#">Error page 403</a></li>
+                      <li><a href="#">Error page 404</a></li>
+                      <li><a href="#">Error page 500</a></li>
+                      <li><a href="#">Error page 503</a></li>
                     </ul>
                   </div>
                 </div>
@@ -48,12 +48,12 @@
                       <h6> Authentication</h6>
                     </div>
                     <ul>
-                      <li><a href="{{route('login')}}">Login</a></li>
-                      <li><a href="{{route('login-one')}}">Login with image</a></li>
-                      <li><a href="{{route('login-bs-validation')}}">Login with validation</a></li>
-                      <li><a href="{{route('sign-up')}}">Sign Up</a></li>
-                      <li><a href="{{route('sign-up-one')}}">SignUp with image</a></li>
-                      <li><a href="{{route('sign-up-two')}}">SignUp with image</a></li>
+                      <li><a href="#">Login</a></li>
+                      <li><a href="#">Login with image</a></li>
+                      <li><a href="#">Login with validation</a></li>
+                      <li><a href="#">Sign Up</a></li>
+                      <li><a href="#">SignUp with image</a></li>
+                      <li><a href="#">SignUp with image</a></li>
                     </ul>
                   </div>
                 </div>
@@ -63,45 +63,12 @@
                       <h6>Usefull Pages</h6>
                     </div>
                     <ul>
-                      <li><a href="{{route('search')}}">Search Website</a></li>
-                      <li><a href="{{route('unlock')}}">Unlock User</a></li>
-                      <li><a href="{{route('forget-password')}}">Forget Password</a></li>
-                      <li><a href="{{route('reset-password')}}">Reset Password</a></li>
-                      <li><a href="{{route('maintenance')}}">Maintenance</a></li>
-                      <li><a href="{{route('login-bs-validation')}}">Login validation</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col mega-box">
-                  <div class="link-section">
-                    <div>
-                      <h6>Email templates</h6>
-                    </div>
-                    <ul>
-                      <li class="ps-0"><a href="{{route('basic-template')}}">Basic Email</a></li>
-                      <li class="ps-0"><a href="{{route('email-header')}}">Basic With Header</a></li>
-                      <li class="ps-0"><a href="{{route('template-email')}}">Ecomerce Template</a></li>
-                      <li class="ps-0"><a href="{{route('template-email-2')}}">Email Template 2</a></li>
-                      <li class="ps-0"><a href="{{route('ecommerce-templates')}}">Ecommerce Email</a></li>
-                      <li class="ps-0"><a href="{{route('email-order-success')}}">Order Success</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col mega-box">
-                  <div class="link-section">
-                    <div>
-                      <h6>Coming Soon</h6>
-                    </div>
-                    <ul class="svg-icon">
-                      <li><a href="{{route('comingsoon')}}"> <i data-feather="file"> </i>Coming-soon</a></li>
-                      <li><a href="{{route('comingsoon-bg-video')}}"> <i data-feather="film"> </i>Coming-video</a></li>
-                      <li><a href="{{route('comingsoon-bg-img')}}"><i data-feather="image"> </i>Coming-Image</a></li>
-                    </ul>
-                    <div>
-                      <h6>Other Soon</h6>
-                    </div>
-                    <ul class="svg-icon">
-                      <li><a class="txt-secondary" href="{{route('sample-page')}}"> <i data-feather="airplay"></i>Sample Page</a></li>
+                      <li><a href="#">Search Website</a></li>
+                      <li><a href="#">Unlock User</a></li>
+                      <li><a href="#">Forget Password</a></li>
+                      <li><a href="#">Reset Password</a></li>
+                      <li><a href="#">Maintenance</a></li>
+                      <li><a href="#">Login validation</a></li>
                     </ul>
                   </div>
                 </div>
@@ -112,31 +79,31 @@
         <li class="level-menu outside">
           <a class="nav-link" href="#!"><i data-feather="inbox"></i><span>Level Menu</span></a>
           <ul class="header-level-menu menu-to-be-close">
-           <li>
-              <a href="{{ route('file-manager') }}" data-original-title="" title=""> <i data-feather="git-pull-request"></i><span>File manager </span></a>
+            <li>
+              <a href="#" data-original-title="" title=""> <i data-feather="git-pull-request"></i><span>File manager </span></a>
             </li>
             <li>
               <a href="#!" data-original-title="" title=""> <i data-feather="users"></i><span>Users</span></a>
               <ul class="header-level-sub-menu">
                 <li>
-                  <a href="{{route('user-profile')}}" data-original-title="" title=""> <i data-feather="user"></i><span>User Profile</span></a>
+                  <a href="#" data-original-title="" title=""> <i data-feather="user"></i><span>User Profile</span></a>
                 </li>
                 <li>
-                  <a href="{{route('edit-profile')}}" data-original-title="" title=""> <i data-feather="user-minus"></i><span>User Edit</span></a>
+                  <a href="#" data-original-title="" title=""> <i data-feather="user-minus"></i><span>User Edit</span></a>
                 </li>
                 <li>
-                  <a href="{{route('user-cards')}}" data-original-title="" title=""> <i data-feather="user-check"></i><span>Users Cards</span></a>
+                  <a href="#" data-original-title="" title=""> <i data-feather="user-check"></i><span>Users Cards</span></a>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="{{ route('kanban') }}" data-original-title="" title=""> <i data-feather="airplay"></i><span>Kanban Board</span></a>
+              <a href="#" data-original-title="" title=""> <i data-feather="airplay"></i><span>Kanban Board</span></a>
             </li>
             <li>
-              <a href="{{ route('bookmark') }}" data-original-title="" title=""> <i data-feather="heart"></i><span>Bookmark</span></a>
+              <a href="#" data-original-title="" title=""> <i data-feather="heart"></i><span>Bookmark</span></a>
             </li>
             <li>
-              <a href="{{ route('social-app') }}" data-original-title="" title=""> <i data-feather="zap"></i><span>Social App </span></a>
+              <a href="#" data-original-title="" title=""> <i data-feather="zap"></i><span>Social App </span></a>
             </li>
           </ul>
         </li>
@@ -174,9 +141,9 @@
             </div>
           </div>
         </li>
-        <li>                         <span class="header-search"><i data-feather="search"></i></span></li>
+        <li> <span class="header-search"><i data-feather="search"></i></span></li>
         <li class="onhover-dropdown">
-          <div class="notification-box"><i data-feather="bell"> </i><span class="badge rounded-pill badge-secondary">4                                </span></div>
+          <div class="notification-box"><i data-feather="bell"> </i><span class="badge rounded-pill badge-secondary">4 </span></div>
           <ul class="notification-dropdown onhover-show-div">
             <li>
               <i data-feather="bell"></i>
@@ -240,9 +207,9 @@
           </div>
         </li>
         <li>
-          
+
           <livewire:tools.mode />
-         
+
         </li>
         <li class="cart-nav onhover-dropdown">
           <div class="cart-box"><i data-feather="shopping-cart"></i><span class="badge rounded-pill badge-primary">2</span></div>
@@ -259,9 +226,9 @@
                   <p>Yellow(#fcb102)</p>
                   <div class="qty-box">
                     <div class="input-group"><span class="input-group-prepend">
-                      <button class="btn quantity-left-minus" type="button" data-type="minus" data-field=""><i data-feather="minus"></i></button></span>
+                        <button class="btn quantity-left-minus" type="button" data-type="minus" data-field=""><i data-feather="minus"></i></button></span>
                       <input class="form-control input-number" type="text" name="quantity" value="1"><span class="input-group-prepend">
-                      <button class="btn quantity-right-plus" type="button" data-type="plus" data-field=""><i data-feather="plus"></i></button></span>
+                        <button class="btn quantity-right-plus" type="button" data-type="plus" data-field=""><i data-feather="plus"></i></button></span>
                     </div>
                   </div>
                   <h6 class="text-end text-muted">$299.00</h6>
@@ -277,9 +244,9 @@
                   <p>Yellow(#fcb102)</p>
                   <div class="qty-box">
                     <div class="input-group"><span class="input-group-prepend">
-                      <button class="btn quantity-left-minus" type="button" data-type="minus" data-field=""><i data-feather="minus"></i></button></span>
+                        <button class="btn quantity-left-minus" type="button" data-type="minus" data-field=""><i data-feather="minus"></i></button></span>
                       <input class="form-control input-number" type="text" name="quantity" value="1"><span class="input-group-prepend">
-                      <button class="btn quantity-right-plus" type="button" data-type="plus" data-field=""><i data-feather="plus"></i></button></span>
+                        <button class="btn quantity-right-plus" type="button" data-type="plus" data-field=""><i data-feather="plus"></i></button></span>
                     </div>
                   </div>
                   <h6 class="text-end text-muted">$299.00</h6>
@@ -292,7 +259,7 @@
                 <h6 class="mb-2 mt-0 text-muted">Order Total : <span class="f-right f-20">$598.00</span></h6>
               </div>
             </li>
-            <li><a class="btn btn-block w-100 mb-2 btn-primary view-cart" href="{{ route('cart') }}">Go to shoping bag</a><a class="btn btn-block w-100 btn-secondary view-cart" href="{{ route('checkout') }}">Checkout</a></li>
+            <li><a class="btn btn-block w-100 mb-2 btn-primary view-cart" href="#">Go to shoping bag</a><a class="btn btn-block w-100 btn-secondary view-cart" href="#">Checkout</a></li>
           </ul>
         </li>
         <li class="onhover-dropdown">
@@ -300,7 +267,7 @@
           <ul class="chat-dropdown onhover-show-div">
             <li>
               <i data-feather="message-square"></i>
-              <h6 class="f-18 mb-0">Message Box                                    </h6>
+              <h6 class="f-18 mb-0">Message Box </h6>
             </li>
             <li>
               <div class="media">
@@ -335,7 +302,7 @@
                 <p class="f-12 font-danger">32 mins ago</p>
               </div>
             </li>
-            <li class="text-center"> <a class="btn btn-primary" href="#">View All     </a></li>
+            <li class="text-center"> <a class="btn btn-primary" href="#">View All </a></li>
           </ul>
         </li>
         <li class="maximize"><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i data-feather="maximize"></i></a></li>
@@ -352,7 +319,12 @@
             <li><a href="#"><i data-feather="mail"></i><span>Inbox</span></a></li>
             <li><a href="#"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
             <li><a href="#"><i data-feather="settings"></i><span>Settings</span></a></li>
-            <li><a href="#"><i data-feather="log-in"> </i><span>Log in</span></a></li>
+            <li>
+              <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i data-feather="log-out"> </i><span>@lang('Log Out')</span></a>
+            </li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              {{ csrf_field() }}
+            </form>
           </ul>
         </li>
       </ul>
