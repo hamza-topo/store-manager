@@ -1,5 +1,5 @@
 @extends('layouts.simple.master')
-@section('title', 'Ecommerce')
+@section('title', 'STORE MANAGER')
 
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/animate.css')}}">
@@ -11,7 +11,7 @@
 
 
 @section('breadcrumb-title')
-<h3>Ecommerce</h3>
+<h3>{{config('app.name')}}</h3>
 @endsection
 
 @section('breadcrumb-items')

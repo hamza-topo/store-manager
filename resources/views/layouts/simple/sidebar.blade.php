@@ -38,6 +38,15 @@
 		                    <li><a href="{{route('employers.list')}}" class=" {{ in_array(request()->route()->getName(),['employers.list','employers.create','employers.edit']) ? 'active' : '' }} " data-bs-original-title="" title="">@lang('lang.Employers')</a></li>
 		                </ul>
 					</li>
+					<li class="sidebar-list">
+						<a class="sidebar-link sidebar-title {{ in_array(request()->route()->getName(),['products.list','products.create','products.edit','employers.list','employers.create','employers.edit']) ? 'active' : '' }}" href="#" data-bs-original-title="" title="">
+							<i data-feather="users"> </i><span>{{ trans('lang.Products & Services') }}</span>
+							<div class="according-menu"><i class="fa fa-angle-right"></i></div>
+						</a>
+						<ul class="sidebar-submenu" style="display: none;">
+		                    <li><a href="{{route('products.list')}}" class="{{ in_array(request()->route()->getName(),['products.list','products.create','products.edit']) ? 'active' : '' }} " data-bs-original-title="" title="">@lang('lang.Products')</a></li>
+		                </ul>
+					</li>
                     {{--<li class="sidebar-list">
 						<a class="sidebar-link sidebar-title {{ in_array(request()->route()->getName(),['products.list','products.create','products.edit']) ? 'active' : '' }}" href="#" data-bs-original-title="" title="">
 							<i data-feather="users"> </i><span>{{ trans('lang.Products\Services & POS') }}</span>

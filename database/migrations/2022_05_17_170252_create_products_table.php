@@ -18,8 +18,9 @@ return new class extends Migration
             $table->integer('store_id');
             $table->string('label');
             $table->double('price',10,2);
-            $table->double('buyPrice',10,2);
+            $table->double('buy_price',10,2);
             $table->integer('quantity');
+            $table->string('image')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
