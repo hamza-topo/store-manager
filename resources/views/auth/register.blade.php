@@ -1,60 +1,70 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+@extends('layouts.authentication.master')
+@section('title', 'Sign-up-two')
 
-        <x-jet-validation-errors class="mb-4" />
+@section('css')
+@endsection
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
 
-            <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            </div>
 
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
-
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-jet-label for="terms">
-                        <div class="flex items-center">
-                            <x-jet-checkbox name="terms" id="terms" required />
-
-                            <div class="ml-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
-                                ]) !!}
-                            </div>
+@section('content')
+<div class="container-fluid p-0">
+    <div class="row m-0">
+        <div class="col-xl-7 p-0"><img class="bg-img-cover bg-center" src="{{asset('assets/images/login/1.jpg')}}" alt="looginpage"></div>
+        <div class="col-xl-5 p-0">
+            <div class="login-card">
+                <div>
+                    <div><a class="logo" href="{{ route('index') }}"><img class="img-fluid for-light" src="{{asset('assets/images/logo/login.png')}}" alt="looginpage"><img class="img-fluid for-dark" src="{{asset('assets/images/logo/logo_dark.png')}}" alt="looginpage"></a></div>
+                    <div class="login-main">
+                        @if(count($errors) > 0)
+                        @foreach( $errors->all() as $message )
+                        <div class="alert alert-danger display-hide">
+                            <button class="close" data-close="alert"></button>
+                            <span>{{ $message }}</span>
                         </div>
-                    </x-jet-label>
+                        @endforeach
+                        @endif
+                        <form class="theme-form" method="POST" action="{{route('register')}}">
+                            @csrf
+                            <h4>{{__('Create your account')}}</h4>
+                            <p>{{__('Enter your personal details to create account')}}</p>
+                            <div class="form-group">
+                                <label class="col-form-label">{{__('Your Full Name')}}</label>
+                                <input class="form-control" type="text" value="{{old('name')}}" required="" name="name" placeholder="{{__('Full name')}}">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">{{__('Email Address')}}</label>
+                                <input class="form-control" type="email" value="{{old('email')}}" name="email" required="" placeholder="test@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Password</label>
+                                <input class="form-control" type="password" value="{{old('password')}}" name="password" required="" placeholder="*********">
+                                <div class="show-hide"><span class="show"></span></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">{{__('Password Confirmation')}}</label>
+                                <input class="form-control" type="password" name="password_confirmation" required="" placeholder="*********">
+                                <div class="show-hide"><span class="show"></span></div>
+                            </div>
+                            <div class="form-group mb-0">
+                                <div class="checkbox p-0">
+                                    <input id="checkbox1" type="checkbox" value="{{old('terms')}}" name="terms" >
+                                    <label class="text-muted" for="checkbox1">{{__('Agree with')}}<a class="ms-2" href="#">{{__('Privacy Policy')}}</a></label>
+                                </div>
+                                <button class="btn btn-primary btn-block" type="submit">{{__('Create Account')}}</button>
+                            </div>
+                            <h6 class="text-muted mt-4 or">{{__('Or signup with')}}</h6>
+                            <div class="social mt-4">
+                                <div class="btn-showcase"><a class="btn btn-light" href="https://www.linkedin.com/login" target="_blank"><i class="txt-linkedin" data-feather="linkedin"></i> LinkedIn </a><a class="btn btn-light" href="https://twitter.com/login?lang=en" target="_blank"><i class="txt-twitter" data-feather="twitter"></i>twitter</a><a class="btn btn-light" href="https://www.facebook.com/" target="_blank"><i class="txt-fb" data-feather="facebook"></i>facebook</a></div>
+                            </div>
+                            <p class="mt-4 mb-0">{{__('Already have an account?')}}<a class="ms-2" href="{{ route('login') }}">Sign in</a></p>
+                        </form>
+                    </div>
                 </div>
-            @endif
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-jet-button class="ml-4">
-                    {{ __('Register') }}
-                </x-jet-button>
             </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('script')
+@endsection

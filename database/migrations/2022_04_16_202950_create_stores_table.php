@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->id();
-            $table->string('senderId');
-            $table->integer('ownerId');
-            $table->integer('activityId');
+            $table->string('sender_id');
+            $table->integer('owner_id');
+            $table->integer('activity_id');
             $table->string('logo')->nullable();
             $table->string('name');
             $table->string('phone')->nullable();

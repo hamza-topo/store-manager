@@ -42,13 +42,13 @@ class InvoiceService implements Service
 
     public function getAll()
     {
-        return 'this function is diseabled for this method';
+        return 'this function is diseabled for this class';
     }
 
     //TODO: clear cache passe store Id
     public function clearCache()
     {
-        return 'this function is diseabled for this method';
+        return 'this function is diseabled for this class';
         // Cache::forget(EnumsInvoice::LIST_EMPLOYERS);
     }
 

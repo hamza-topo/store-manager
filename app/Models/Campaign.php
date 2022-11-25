@@ -17,8 +17,8 @@ class Campaign extends Model
      * @var array
      */
     protected $fillable = [
-        'storeId',
-        'campaignType',
+        'store_id',
+        'campaign_type',
         'messages',
     ];
 

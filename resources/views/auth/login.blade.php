@@ -41,7 +41,7 @@
                             <div class="social mt-4">
                                 <div class="btn-showcase"><a class="btn btn-light" href="https://www.linkedin.com/login" target="_blank"><i class="txt-linkedin" data-feather="linkedin"></i> LinkedIn </a><a class="btn btn-light" href="https://twitter.com/login?lang=en" target="_blank"><i class="txt-twitter" data-feather="twitter"></i>twitter</a><a class="btn btn-light" href="https://www.facebook.com/" target="_blank"><i class="txt-fb" data-feather="facebook"></i>facebook</a></div>
                             </div>
-                            <p class="mt-4 mb-0">Don't have account?<a class="ms-2" href="{{-- route('sign-up') --}}">Create Account</a></p>
+                            <p class="mt-4 mb-0">Don't have account?<a class="ms-2" href="{{ route('register') }}">Create Account</a></p>
                             <script>
                                 (function() {
                                     'use strict';

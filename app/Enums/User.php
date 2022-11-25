@@ -10,4 +10,7 @@ class User extends Enum
     const IS_OWNER         = 1;
     const IS_EMPLOYER         = 2;
     const CACHE_TIME        = 28800;
+    const ADMIN = 1;
+    const OWNER = 2;
+    const EMPLOYER = 3;
 }

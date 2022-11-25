@@ -17,8 +17,8 @@ class Store extends Model
      * @var array
      */
     protected $fillable = [
-        'ownerId',
-        'activityId',
+        'owner_id',
+        'activity_id',
         'logo',
         'name',
         'phone',
@@ -27,7 +27,7 @@ class Store extends Model
         'tva',
         'status',
         'invoice_message',
-        'senderId',
+        'sender_id',
     ];
 
 

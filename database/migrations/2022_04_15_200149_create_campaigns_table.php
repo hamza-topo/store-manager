@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('campaigns', function (Blueprint $table) {
             $table->id();
-            $table->integer('storeId');
-            $table->tinyInteger('campaignType');
+            $table->integer('store_id');
+            $table->tinyInteger('campaign_type');
             $table->json('messages')->nullable();
             $table->timestamps();
             $table->softDeletes();

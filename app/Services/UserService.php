@@ -36,14 +36,14 @@ class UserService implements Service
     public function getOwners(): Collection
     {
         return  Cache::remember(EnumsUser::LIST_OWNERS, EnumsUser::CACHE_TIME, function () {
-            return  User::where('isAdmin', EnumsUser::IS_OWNER)->with('stores')->get();
+            return  User::where('is_admin', EnumsUser::IS_OWNER)->with('stores')->get();
         });
     }
 
     public function getEmployers(): Collection
     {
         return  Cache::remember(EnumsUser::LIST_EMPLOYERS, EnumsUser::CACHE_TIME, function () {
-            return User::where('isAdmin', EnumsUser::IS_EMPLOYER)->with('store')->get();
+            return User::where('is_admin', EnumsUser::IS_EMPLOYER)->with('store')->get();
         });
     }
 

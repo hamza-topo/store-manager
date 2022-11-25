@@ -23,6 +23,6 @@ class Activity extends Model
 
     public function stores()
     {
-        return $this->hasMany(Store::class,'activityId');
+        return $this->hasMany(Store::class,'activity_id');
     }
 }

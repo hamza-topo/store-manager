@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->integer('storeId');
+            $table->integer('store_id');
             $table->string('label');
             $table->double('price',10,2);
             $table->double('buyPrice',10,2);

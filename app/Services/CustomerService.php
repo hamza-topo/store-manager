@@ -38,7 +38,7 @@ class CustomerService implements Service
 
     public function getByStoreIdAndType(int $storeId, int $type): Customer|null
     {
-        return Customer::where('storeId', $storeId)->where('campaign_type', $type)->first();
+        return Customer::where('store_id', $storeId)->where('campaign_type', $type)->first();
     }
 
     public function getAll(): Collection

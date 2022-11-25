@@ -12,12 +12,12 @@ class Customer extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'phone', 'birth', 'sexe', 'storeId', 'userId', 'created_at', 'updated_at'
+        'first_name', 'last_name', 'email', 'phone', 'birth', 'sexe', 'store_id', 'user_id', 'created_at', 'updated_at'
     ];
 
     public function store()
     {
-        return $this->belongsTo(Store::class, 'storeId');
+        return $this->belongsTo(Store::class, 'store_id');
     }
 
     public function getFullNameAttribute()
@@ -25,7 +25,5 @@ class Customer extends Model
         return $this->firstname . " " . $this->lastname;
     }
 
-    // public function invoices(){
-    //     return $this->hasMany('App\Models\Invoice','customer_id');
-    // }
+
 }

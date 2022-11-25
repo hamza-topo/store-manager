@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->integer('storeId')->default(1);
-            $table->integer('userId')->default(2);
+            $table->integer('store_id')->default(1);
+            $table->integer('user_id')->default(2);
             $table->string('phone')->nullable();
             $table->string('email');
-            $table->string('firstname');
-            $table->string('lastname');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('sexe')->comment='0:H,1:F';
             $table->date('birth');
             $table->integer('points')->default(0);

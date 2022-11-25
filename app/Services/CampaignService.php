@@ -36,7 +36,7 @@ class CampaignService implements Service
 
     public function getByStoreIdAndType(int $storeId, int $type): Campaign|null
     {
-        return Campaign::where('storeId', $storeId)->where('campaign_type', $type)->first();
+        return Campaign::where('store_id', $storeId)->where('campaign_type', $type)->first();
     }
 
     public function getAll(): Collection
@@ -48,8 +48,8 @@ class CampaignService implements Service
 
     public function getCampaignsBirthday(): Collection
     {
-        return Campaign::where('campaignType', ModelCampaign::BIRTHDAY)->with('store', function ($query) {
-            return $query->select('id', 'senderId');
+        return Campaign::where('campaign_type', ModelCampaign::BIRTHDAY)->with('store', function ($query) {
+            return $query->select('id', 'sender_id');
         })->get();
     }
 
