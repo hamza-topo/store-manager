@@ -22,20 +22,26 @@ class ProductForm extends Component
         if (!empty($productIdUpdated)) {
             $this->product = ProductFacade::findById($productIdUpdated)->toArray();
         }
-        //TODO: get this entities
-        // $this->owners = UserFacade::getOwners();
-        // $this->activities = ActivityFacade::getAll();
     }
 
     public function save()
     {
         try {
-            if (!empty($this->product['image'])) {
-                $path = $this->product['image']->store(Path::PRODUCTS_IMAGE_STORAGE_PATH . $this->product['store_id']);
-                $this->product['image'] = $path;
-            }
-            $product = ProductFacade::create($this->product);
-            $message = __('The store is  created successfully');
+            $this->moveImage();
+            ProductFacade::create($this->product);
+            $message = __('The product is  created successfully');
+            $this->alert('success', $message);
+        } catch (\Exception $e) {
+            $this->alert('warning', $e->getMessage());
+        }
+    }
+
+    public function  update()
+    {
+        try {
+            $this->moveImage();
+            ProductFacade::edit($this->product['id'], $this->product);
+            $message = __('The Product is updated successfully');
             $this->alert('success', $message);
         } catch (\Exception $e) {
             $this->alert('warning', $e->getMessage());
@@ -43,6 +49,13 @@ class ProductForm extends Component
     }
 
 
+    private function moveImage()
+    {
+        if (!empty($this->product['image'])) {
+            $path = $this->product['image']->store(Path::PRODUCTS_IMAGE_STORAGE_PATH . $this->product['store_id']);
+            $this->product['image'] = $path;
+        }
+    }
 
     public function render()
     {

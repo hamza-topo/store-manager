@@ -42,6 +42,7 @@
                 <input class="form-control" id="validationDefault01" type="file" wire:model="product.image">
             </div>
         </div>
+
     </div>
     <div class="mt-3" style="text-align: right;">
         @if (empty($product['id']))
@@ -52,5 +53,11 @@
     </div>
     @else
     <x-tools.empty-data-message />
+    @endif
+
+    @if(!empty($product['image']))
+    <div class="col-md-6">
+        <img src="{{asset($product['image'])}}" class="img-fluid" alt="">
+    </div>
     @endif
 </div>

@@ -22,6 +22,7 @@ class Product extends Model
         'price',
         'buy_price',
         'quantity',
+        'quantity_rest',
         'image'
     ];
 
