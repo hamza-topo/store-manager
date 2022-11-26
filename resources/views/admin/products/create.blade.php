@@ -1,5 +1,5 @@
 @extends('layouts.simple.master')
-@section('title', 'Select2')
+@section('title', 'Product')
 <title>@lang('New Product')</title>
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/range-slider.css')}}">

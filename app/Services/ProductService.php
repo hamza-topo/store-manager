@@ -43,7 +43,7 @@ class ProductService implements Service
     public function getByStoreId(int $storeId): Collection
     {
         return Cache::remember(EnumsProduct::LIST_PRODUCTS_ . $storeId, EnumsProduct::CACHE_TIME, function () use ($storeId) {
-            return Product::where('store_id', $storeId)->get();
+            return Product::where('store_id', $storeId)->with('store')->get();
         });
     }
 

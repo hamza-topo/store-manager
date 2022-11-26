@@ -7,11 +7,13 @@ use App\Listeners\CustomerCreatedListener;
 use App\Models\Activity;
 use App\Models\Campaign;
 use App\Models\Customer;
+use App\Models\Product;
 use App\Models\Store;
 use App\Models\User;
 use App\Observers\ActivityObserver;
 use App\Observers\CampaignObserver;
 use App\Observers\CustomerObserver;
+use App\Observers\ProductObserver;
 use App\Observers\StoreObserver;
 use App\Observers\UserObserver;
 use Illuminate\Auth\Events\Registered;
@@ -47,6 +49,7 @@ class EventServiceProvider extends ServiceProvider
         Campaign::observe(CampaignObserver::class);
         Activity::observe(ActivityObserver::class);
         Customer::observe(CustomerObserver::class);
+        Product::observe(ProductObserver::class);
     }
 
     /**
