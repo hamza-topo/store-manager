@@ -1,17 +1,17 @@
 <?php
 
-namespace App\View\Components\Tools;
+namespace App\View\Components\Ui;
 
 use Illuminate\View\Component;
 
-class EmptyDataMessage extends Component
+class Loader extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(public string $message='')
+    public function __construct()
     {
         //
     }
@@ -23,6 +23,6 @@ class EmptyDataMessage extends Component
      */
     public function render()
     {
-        return view('components.tools.empty-data-message');
+        return view('components.ui.loader');
     }
 }

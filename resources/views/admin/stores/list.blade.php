@@ -1,9 +1,9 @@
 @extends('layouts.simple.master')
 @section('title', 'Sherin List of Stores')
 
-@section('css')
+@push('css')
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/datatables.css')}}">
-@endsection
+@endpush
 
 
 
@@ -37,7 +37,7 @@
 </div>
 @endsection
 
-@section('script')
+@push('script')
 <script src="{{asset('assets/js/datatable/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('assets/js/datatable/datatables/datatable.custom.js')}}"></script>
-@endsection
+@endpush

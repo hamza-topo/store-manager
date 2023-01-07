@@ -1,11 +1,10 @@
 @extends('layouts.simple.master')
-@section('title', 'Select2')
-
-@section('css')
+@section('title', 'New Store')
+@push('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/range-slider.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/select2.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/date-picker.css') }}">
-@endsection
+@endpush
 
 
 
@@ -52,7 +51,7 @@
     </div>
 @endsection
 
-@section('script')
+@push('script')
     <script src="{{ asset('assets/js/range-slider/ion.rangeSlider.min.js') }}"></script>
     <script src="{{ asset('assets/js/range-slider/rangeslider-script.js') }}"></script>
     <script src="{{ asset('assets/js/select2/select2.full.min.js') }}"></script>
@@ -63,4 +62,4 @@
     <script src="{{ asset('assets/js/editor/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('assets/js/editor/ckeditor/adapters/jquery.js') }}"></script>
     <script src="{{ asset('assets/js/email-app.js') }}"></script>
-@endsection
+@endpush

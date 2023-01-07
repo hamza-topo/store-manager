@@ -14,18 +14,19 @@
             </thead>
             <tbody>
                 @foreach ($stores as $store)
-                    <tr>
-                        <td>{{$store->name}}</td>
-                        <td>{{$store->senderId}}</td>
-                        <td>{{$store->ownerId}}</td>
-                        <td>{{$store->activityId}}</td>
-                        <td>{{$store->tva}}</td>
-                        <td>{{$store->phone}}</td>
-                        <td>
-                            <button class="btn btn-danger btn-sm" type="button" wire:click='delete({{$store->id}})'>@lang('lang.Delete')</button>
-                            <a class="btn btn-info btn-sm" type="button" href="{{route('stores.edit',$store->id)}}">@lang('lang.Edit')</a>
-                        </td>
-                    </tr>
+                <tr>
+                    <td>{{$store->name}}</td>
+                    <td>{{$store->senderId}}</td>
+                    <td>{{$store->ownerId}}</td>
+                    <td>{{$store->activityId}}</td>
+                    <td>{{$store->tva}}</td>
+                    <td>{{$store->phone}}</td>
+                    <td>
+                        <a class="text-danger" href="#"  wire:click='delete({{$store->id}})'><i data-feather="trash-2"></i></a>
+                        <a class="text-secondary" href="{{route('stores.edit',$store->id)}}"><i data-feather="edit-2"></i></a>
+                        <a><i data-feather="info"></i></a>
+                    </td>
+                </tr>
                 @endforeach
             </tbody>
         </table>

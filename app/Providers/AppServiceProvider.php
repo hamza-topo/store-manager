@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
 
     protected function loadHelpers()
     {
-        foreach (glob(__DIR__ . '/../Helpers/Functions/*.php') as $filename) {
+        foreach (glob(__DIR__ . '/../Helpers/*.php') as $filename) {
             require_once $filename;
         }
     }

@@ -1,4 +1,5 @@
 <div>
+    @if(!empty($owners) && $owners->count()>0)
     <div class="col-md-12 row">
         <div class="col-md-6">
             <div class="mb-2">
@@ -117,4 +118,9 @@
             <button class="btn btn-primary " type="button" wire:click='update()'>@lang('lang.Update')</button>
         @endif
     </div>
+    @else 
+    <div class="row col-md-12">
+    <x-tools.empty-data-message :message='__("Please Create an Owner to accomplish the Task")'/>
+    </div>
+    @endif
 </div>
